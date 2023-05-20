@@ -15,6 +15,18 @@ position: absolute;
     top:50px;
 
 }
+.highscore{
+    position: absolute;
+        font-size: 20px;
+        left:20px;
+        top:20px;
+        display: flex;
+        
+    }
+#highscore{
+    margin-left: 20px;
+
+}
 #game{
 
     width: 500px;
@@ -28,7 +40,7 @@ position: absolute;
     background-color: rgb(119, 182, 1);
     position: relative;
     top: 150px;
-    
+    left:40px;
 }
 .animate{
     animation: jump 500ms ;
@@ -42,10 +54,12 @@ position: absolute;
     position: relative;
     top: 130px;
     left: 480px;
-    animation-name: block;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: block 2s infinite linear;
+    
+}
+#color{
+
+    animation: colorchange 2s infinite ;
 }
 @keyframes block{
     0%{left: 480px;}
@@ -57,4 +71,56 @@ position: absolute;
     70%{top: 90px;}
     1000%{top: 150px;}
 
+}
+@keyframes colorchange {
+    0%{background-color: rgb(212, 0, 255);}
+    20%{background-color: rgb(119, 0, 255);}
+    40%{background-color: rgb(0, 47, 255);}
+    60%{background-color: rgb(0, 132, 255);}
+    80%{background-color: rgb(149, 3, 179);}
+    100%{background-color: rgb(212, 0, 255);}
+    
+}
+.stripes{
+    width: 20px;
+    height: 5px;
+    color: white;
+    background-color:white ;
+    position: relative;
+}
+#one{
+    top: 18px;
+
+}
+#two{
+    top: 22px;
+
+}
+#three{
+    top: 26px;
+
+}
+#eyes{
+    top: 7px;
+    height: 8px;
+    display: flex;
+    background-color: gray;
+}
+.eye{
+    
+    background-color: black;
+    height: 3px;
+    width: 3px;
+    position: relative;
+    top: 1px;
+    
+    
+}
+.e1{
+    left: 30%;
+
+}
+.e2{
+    right: -50%;
+    
 }
