@@ -28,7 +28,7 @@ var checkDead=setInterval(function(){
     var characterTop =parseInt(window.getComputedStyle(character).getPropertyValue ("top"));
     var blockLeft =parseInt(window.getComputedStyle(block).getPropertyValue ("left"));
     if(blockLeft<60 &&blockLeft>40 && characterTop>130){
-        block.style.animationName="none"
+        block.style.animationName="none";
         dead=true;
         
         if(score>highscore){

@@ -1,0 +1,85 @@
+body{
+    background-color: black;
+
+
+}
+#game{
+    height: 800px;
+    width: 1400px;
+    margin: auto;
+    border:  solid black;
+    background-color: black;
+    overflow: hidden;
+    border: 1px solid white;
+}
+#character{
+    position: relative;
+    top: 750px;
+    left: 700px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 0, 0);
+    
+}
+.car{
+    background-color: white;
+    position: relative;
+    height: 50px;
+    width: 100px;
+    animation: carMov 10s  linear infinite  ;
+    left: 1400px;
+    animation-fill-mode: forwards;
+}
+
+
+
+.bus{
+    background-color: white;
+    position: relative;
+    height: 50px;
+    width: 200px;
+    animation: carMov 11s  linear infinite  ;
+    left: 1400px;
+    
+    
+
+
+}
+.train{
+    background-color: white;
+    position: relative;
+    height: 50px;
+    width: 1400px;
+    
+    left: 1400px;
+    
+    
+
+
+}
+.animate{
+    animation: trainMov 1s  linear ;
+    
+
+
+}
+@keyframes carMov{
+    0%{left: 1400px;}
+    100%{left: -100px;}
+}
+@keyframes trainMov{
+    0%{left: 1400px;}
+    100%{left: -1400px;}
+}
+.score{
+    color: white;
+    display: flex;
+    margin: auto;
+    position: absolute;
+    top:30px;
+    left: 300px;
+    font-size: 40px;
+}
+#score{
+    margin-left: 20px;
+}
