@@ -35,7 +35,7 @@ var checkDead=setInterval(function(){
             highscore=score;
             document.getElementById("highscore").innerHTML=highscore;
         }
-        alert("You loose!!\nYou got "+score+" points");
+        alert("You loose!!!\nYou got "+score+" points");
         restart();
     }
     speed=speed-0.3;
