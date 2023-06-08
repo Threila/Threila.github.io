@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" onkeydown="jump()" onclick="jump()" >
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     
     
 </head>
-<body>
+<body id="body">
     
 
     <div id="game">
@@ -38,11 +38,14 @@
         </div>
     </div>
     <p class="score" id="score">0</p>
-    <div class="highscore">
-        <p>highscore </p>
+    <div class="highscore" id="high3" >
+        <p id="high2">highscore </p>
         <p  id="highscore">0</p>
     </div>
-    
+    <div id="end" class="end">
+    <p class="text">Game Over </p>
+    <p class="text">Tap Character to restart </p>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

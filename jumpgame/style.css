@@ -15,6 +15,20 @@ position: absolute;
     top:50px;
 
 }
+#end{
+    visibility: hidden;
+    position: absolute;
+    font-size: 20px;
+    left:180px;
+    top:150px;
+    background-color: #c21c18;
+    text-align: center
+
+}
+.text{
+    background-color: #c21c18;
+
+}
 .highscore{
     position: absolute;
         font-size: 20px;

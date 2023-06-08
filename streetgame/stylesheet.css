@@ -83,3 +83,11 @@ body{
 #score{
     margin-left: 20px;
 }
+.sort{
+    display: flex;
+
+}
+.mov{
+    left: 0px;
+
+}

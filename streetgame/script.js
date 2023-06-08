@@ -2,7 +2,7 @@ character= document.getElementById("character");
 game= document.getElementById("game");
 var ins="";
 level=0;
-initialSetup();
+initialSetup2();
 
 
 
@@ -83,18 +83,60 @@ document.addEventListener('keypress', (event) => {
 
 
   }
+  function initialSetup2(){
+    ins="";
+    var spawn=Array(14);
+    
+    for(var i=0;i<14;i++){
+      var train= Math.floor(Math.random() * 10);
+      if(train==1){
+        spawn[i]="<div class='train mov'></div>";
+      }else{
+        var number= Math.floor(Math.random() * 3+2);
+        var temp="";
+        for(var a=0;a<number;a++){
+          var mobile= Math.floor(Math.random() * 2);
+          switch(mobile) {
+            case 0:
+                temp=temp+"<div class='car mov'></div>";
+              break;
+
+            case 1:
+              temp=temp+"<div class='car mov'></div>";
+              break;
+              
+
+        }
+      }
+      spawn[i]="<div class='sort'>"+temp+"</div>"
+    }
+    }
+    for(var i=0;i<14;i++){
+        ins=ins.concat(spawn[i]);
+
+    }
+    document.getElementById("blocks").innerHTML=ins;
+    console.log(ins);
+
+    var movDings=document.getElementsByClassName("mov");
+    for(var i=0;i<movDings.length;i++){
+    movDings[i].animationDuration="0.5s";
+        
+}
+  }
   var trainMov=setInterval(function(){
     var trains=document.getElementsByClassName("train");
-
-    if(trains[0].classList !="animate"){
-        trains[0].classList.add("animate");
+    for(var i=0;i<trains.length;i++){
+    if(trains[i].classList !="animate"){
+        trains[i].classList.add("animate");
         setTimeout(function(){
-            trains[0].classList.remove("animate");
+            trains[i].classList.remove("animate");
             
         },1001)
+
         console.log("idk")
     }
-
+  }
   },4000)
 //moveDown2();
   function moveDown(){

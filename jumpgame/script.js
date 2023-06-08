@@ -1,9 +1,13 @@
 var character=document.getElementById("character");
 var block=document.getElementById("block");
+var game=document.getElementById("game");
+
 var score=0;
 var highscore=0;
 var dead=false;
 var speed=2000;
+game.addEventListener("mousedown",jump);
+game.addEventListener("touchstart",jump);
 
 window.mobileCheck = function() {
     let check = false;
@@ -16,6 +20,9 @@ window.mobileCheck = function() {
 
 
 function jump(){
+    if(dead){
+        restart()
+    }else{
     if(character.classList !="animate"){
     character.classList.add("animate");
     setTimeout(function(){
@@ -23,6 +30,7 @@ function jump(){
         
     },500)
 }
+    }
 }
 var checkDead=setInterval(function(){
     var characterTop =parseInt(window.getComputedStyle(character).getPropertyValue ("top"));
@@ -30,13 +38,18 @@ var checkDead=setInterval(function(){
     if(blockLeft<60 &&blockLeft>40 && characterTop>130){
         block.style.animationName="none";
         dead=true;
-        
+        document.getElementById("end").style.visibility="visible";
+        game.style.backgroundColor="#c21c18";
+        document.getElementById("score").style.backgroundColor="#c21c18";
+        document.getElementById("highscore").style.backgroundColor="#c21c18";
+        document.getElementById("high2").style.backgroundColor="#c21c18";
+        document.getElementById("high3").style.backgroundColor="#c21c18";
         if(score>highscore){
             highscore=score;
             document.getElementById("highscore").innerHTML=highscore;
         }
-        alert("You loose!!!\nYou got "+score+" points");
-        restart();
+        //alert("You loose!!!\nYou got "+score+" points");
+        //restart();
     }
     speed=speed-0.3;
     block.style.animationDuration=speed+"ms";
@@ -50,13 +63,19 @@ var points=setInterval(function(){
     document.getElementById("score").innerHTML=score;
     }
 
-},2000)
+},speed)
 
 function restart(){
     dead=false;
     score=0;
     speed=2000;
+    document.getElementById("end").style.visibility="hidden";
     block.style.animationName="block";
+    game.style.backgroundColor="black";
+        document.getElementById("score").style.backgroundColor="black";
+        document.getElementById("highscore").style.backgroundColor="black";
+        document.getElementById("high2").style.backgroundColor="black";
+        document.getElementById("high3").style.backgroundColor="black";
 }
 
 var a=setInterval(function(){
