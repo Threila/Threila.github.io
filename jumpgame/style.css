@@ -2,11 +2,27 @@
     padding: 0;
     margin: 0;
     background-color: black;
-    
+    color: white;
 }
 p{
 color: white;
-
+    font-family: 'Times New Roman', Times, serif;
+}
+pre{
+    font-family: 'Times New Roman', Times, serif;
+}
+.button{
+    width: 40px;
+    height: 40px;
+    border-color: white;
+    margin-left: 20px;
+}
+.colorblock{
+    padding-left: 20px;
+    display: flex;
+    margin: auto;
+    height: 20px;
+    
 }
 .score{
 position: absolute;
@@ -137,4 +153,22 @@ position: absolute;
 .e2{
     right: -50%;
     
+}
+.b1{
+    background-color:rgb(119, 182, 1) ;
+}
+.b2{
+    background-color:rgb(0, 255, 221) ;
+}
+.b3{
+    background-color:rgb(0, 4, 252) ;
+}
+.b4{
+    background-color:rgb(255, 0, 242) ;
+}
+.b5{
+    background-color:rgb(255, 0, 76) ;
+}
+.b6{
+    background-color:rgb(255, 0, 0) ;
 }
