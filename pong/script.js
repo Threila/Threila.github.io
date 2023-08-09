@@ -151,6 +151,7 @@ if(x<borderLeft-(width/56,35)){
     if(score2==7){
         end=true;
         document.getElementById("win").innerHTML="Player 2 wins!!!";
+        document.getElementById("win").addEventListener("touchstart",mobileStart);
     }
 }
 if(x>borderRight+(width/56,35)){
@@ -163,6 +164,7 @@ if(x>borderRight+(width/56,35)){
     if(score1==7){
         end=true;
         document.getElementById("win").innerHTML="Player 1 wins!!!";
+        document.getElementById("win").addEventListener("touchstart",mobileStart);
     }
 }
 }
@@ -184,7 +186,7 @@ var mainLoop=setInterval(function(){
     if(end){
     
         if(map[32]){
-           
+            map[32]=false;
             end=false;
             reset();
 }}})
@@ -195,16 +197,20 @@ function reset(){
     document.getElementById("1").innerHTML=score1;
     document.getElementById("2").innerHTML=score2;
     document.getElementById("win").innerHTML="";
+    document.getElementById("win").removeEventListener("touchstart",mobileStart);
 
 }
 
 
 //touch
-document.getElementById("win").ontouchstart=function(e){map[32]=true;}
-part1.ontouchstart=function(e){map[32]=true;}
-part2.ontouchstart=function(e){map[32]=true;}
-document.getElementById("points" ).ontouchstart=function(e){map[32]=true;}
 
+
+document.getElementById("win").addEventListener("touchstart",mobileStart);
+
+function mobileStart(){
+        map[32]=true;
+        console.log("hallo");
+}
 
 part1.addEventListener("touchmove", function(e){
     console.log(e.touches[0].screenY);
