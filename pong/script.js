@@ -88,7 +88,7 @@ if ((x<100)&&(y>(-1*(800-characterTop1))&&y<((800-characterTop1-170)*-1))){
 }
     else if(x>1370&&(y>(-1*(800-characterTop2))&&y<((800-characterTop2-170)*-1))){
         vector[0]=vector[0]*-1;
-        vector[0]=vector[0]+1;
+        vector[0]=vector[0]-1;
         temp=false;
 }
 }else{
