@@ -34,8 +34,8 @@ function initialStartup(){
     player2.style.marginLeft=(width/2-width/25-paddleWidth) +"px";
     part1.style.height=height+"px";
     part2.style.height=height+"px";
-    part2.style.width=width/2+"px";
     part1.style.width=width/2+"px";
+    part2.style.width=width/2+"px";
     ball.style.marginLeft=width/2+"px";
     ball.style.marginTop=height/2*-1+"px";
     document.getElementById("win").style.marginTop=(height/2)*-1+"px";
@@ -70,6 +70,16 @@ var waitLoop=setInterval(function(){
 
 var paddleLoop=setInterval(function(){  
         input();
+        if(height!=window.innerHeight||width!=window.innerWidth){
+            height=window.innerHeight;
+            width=window.innerWidth;
+            paddleSize=height/4.7;
+            paddleWidth=width/50;
+            initialSpeed=width/200;
+            borderLeft=width/25+paddleSize-(width/13);
+            borderRight=width-width/25-paddleWidth-30;
+            initialStartup();
+        }
 },10)
 
 function input(){
@@ -187,3 +197,20 @@ function reset(){
     document.getElementById("win").innerHTML="";
 
 }
+
+
+//touch
+document.getElementById("win").ontouchstart=function(e){map[32]=true;}
+part1.ontouchstart=function(e){map[32]=true;}
+part2.ontouchstart=function(e){map[32]=true;}
+document.getElementById("points" ).ontouchstart=function(e){map[32]=true;}
+
+
+part1.addEventListener("touchmove", function(e){
+    console.log(e.touches[0].screenY);
+    player1.style.marginTop=e.touches[0].screenY-paddleSize/2 +"px";
+});
+part2.addEventListener("touchmove", function(e){
+    console.log(e.touches[0].screenY);
+    player2.style.marginTop=e.touches[0].screenY-paddleSize/2 +"px";
+});
