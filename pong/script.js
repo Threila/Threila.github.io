@@ -213,10 +213,20 @@ function mobileStart(){
 }
 
 part1.addEventListener("touchmove", function(e){
-    console.log(e.touches[0].screenY);
-    player1.style.marginTop=e.touches[0].screenY-paddleSize/2 +"px";
+    i=0;
+    while(e.touches[i].screenY>width/2){
+        i++;
+    }
+    player1.style.marginTop=e.touches[i].screenY-paddleSize/2 +"px";
 });
+
+
 part2.addEventListener("touchmove", function(e){
     console.log(e.touches[0].screenY);
-    player2.style.marginTop=e.touches[0].screenY-paddleSize/2 +"px";
+    
+    i=0;
+    while(e.touches[i].screenY<width/2){
+        i++;
+    }
+    player2.style.marginTop=e.touches[i].screenY-paddleSize/2 +"px";
 });
