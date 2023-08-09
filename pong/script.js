@@ -18,8 +18,8 @@ paddleWidth=width/50;
 initialSpeed=width/200;
 borderLeft=width/25+paddleSize-(width/13);
 borderRight=width-width/25-paddleWidth-30;
-console.log(width);
-console.log(height);
+mobilezoom=1.5;
+
 initialStartup();
 function initialStartup(){
     game.style.width=width+"px";
@@ -44,6 +44,19 @@ function initialStartup(){
     document.getElementById("points").style.marginLeft=width/2-200+"px";
 
 }
+
+function zoomOutMobile() {
+    var viewport = document.querySelector('meta[name="viewport"]');
+  
+    if ( viewport ) {
+      viewport.content = "initial-scale=0.1";
+      viewport.content = "width=device-width";
+    }
+  }
+  
+  zoomOutMobile();
+
+
 onkeydown = onkeyup = function(e){
     
     e = e || event; 
@@ -217,7 +230,7 @@ part1.addEventListener("touchmove", function(e){
     while(e.touches[i].screenX>width/2){
         i++;
     }
-    player1.style.marginTop=e.touches[i].screenY-paddleSize/2 +"px";
+    player1.style.marginTop=(e.touches[i].screenY-paddleSize/2)*mobilezoom +"px";
 });
 
 
@@ -228,5 +241,5 @@ part2.addEventListener("touchmove", function(e){
     while(e.touches[i].screenX<width/2){
         i++;
     }
-    player2.style.marginTop=e.touches[i].screenY-paddleSize/2 +"px";
+    player2.style.marginTop=(e.touches[i].screenY-paddleSize/2)*mobilezoom +"px";
 });
