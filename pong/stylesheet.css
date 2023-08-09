@@ -1,8 +1,15 @@
+*{
+
+    box-sizing: border-box
+}
+html, body {
+    margin: 0;
+  }
 #game{
 
     width: 1500px;
     height: 800px;
-    border:  solid black;
+    border: 0px  solid black;
     background-color: black;
     justify-content: center;
     position: relative;
