@@ -16,7 +16,7 @@ width=window.innerWidth;
 paddleSize=height/4.7;
 paddleWidth=width/50;
 initialSpeed=width/200;
-borderLeft=width/25+paddleSize-(width/13);
+borderLeft=width/25+paddleWidth;//-(width/13);
 borderRight=width-width/25-paddleWidth-30;
 mobilezoom=1.5;
 
@@ -89,7 +89,7 @@ var paddleLoop=setInterval(function(){
             paddleSize=height/4.7;
             paddleWidth=width/50;
             initialSpeed=width/200;
-            borderLeft=width/25+paddleSize-(width/13);
+            borderLeft=width/25+paddleWidth;//-(width/13);
             borderRight=width-width/25-paddleWidth-30;
             initialStartup();
         }
@@ -141,6 +141,8 @@ var characterTop1 =parseInt(window.getComputedStyle(player1).marginTop);
 var characterTop2 =parseInt(window.getComputedStyle(player2).marginTop);
 if(temp){
 if ((x<borderLeft)&&(y>(-1*(height-characterTop1))&&y<((height-characterTop1-paddleSize)*-1))){
+    
+    
     vector[0]=vector[0]*-1;
     vector[0]=vector[0]+0.5;
     temp=false;
@@ -243,3 +245,8 @@ part2.addEventListener("touchmove", function(e){
     }
     player2.style.marginTop=(e.touches[i].screenY-paddleSize/2)*mobilezoom +"px";
 });
+
+document.getElementById("help").addEventListener("click",function(e){
+
+    alert("Player1: w/s \nPlayer2: ^/v  \nPlease play in horizontal mode");
+})
