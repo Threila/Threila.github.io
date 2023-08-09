@@ -5,6 +5,9 @@
 html, body {
     margin: 0;
   }
+  body {
+    overscroll-behavior: contain;
+  }
 #game{
 
     width: 1500px;
